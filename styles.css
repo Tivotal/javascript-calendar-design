@@ -1,0 +1,122 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #212121;
+}
+
+.calendar {
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.calendar header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 30px 10px;
+}
+
+header .current-date {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+header .cal-nav {
+  display: flex;
+}
+
+header .cal-nav span {
+  width: 35px;
+  height: 35px;
+  margin: 0 1px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 18px;
+  color: #aeabab;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+header .cal-nav span:nth-child(2) {
+  margin-right: -10px;
+}
+
+header .cal-nav span:hover {
+  background: #f2f2f2;
+}
+
+.calendar-body {
+  padding: 20px;
+}
+
+.calendar-body ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.calendar-body ul li {
+  width: calc(100% / 7);
+  font-size: 17px;
+  color: #414141;
+}
+
+.weeks li {
+  font-weight: 500;
+}
+
+.calendar-body .dates {
+  margin-bottom: 20px;
+}
+
+.dates li {
+  position: relative;
+  margin-top: 30px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dates li::before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.dates li.active {
+  color: #fff;
+}
+
+.dates li.inactive {
+  color: #aaa;
+}
+
+.dates li.active::before {
+  background: #0034c4;
+}
+
+.dates li:not(.active):hover:before {
+  background: #e4e1e1;
+}
