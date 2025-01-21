@@ -42,7 +42,8 @@ let buildCal = () => {
 
   //add last dates of lost month
   for (let i = dayFirst; i > 0; i--) {
-    liTags += `<li class="inactive">${prevMonthLastDate - i + 1}</li>`;
+    liTags += `<li class="inactive">
+    ${prevMonthLastDate - i + 1}</li>`;
   }
 
   //add current month dates
@@ -60,7 +61,8 @@ let buildCal = () => {
 
   //add first dates of next month
   for (let i = dayLast; i < 6; i++) {
-    liTags += `<li class="inactive">${i - dayLast + 1}</li>`;
+    liTags += `<li class="inactive">
+    ${i - dayLast + 1}</li>`;
   }
 
   dates.innerHTML = liTags;
@@ -70,7 +72,8 @@ buildCal();
 
 navIcons.forEach((icon) => {
   icon.addEventListener("click", () => {
-    month = icon.id === "prev" ? month - 1 : month + 1;
+    month = icon.id === "prev" 
+      ? month - 1 : month + 1;
 
     //check if the month is out of range
     if (month < 0 || month > 11) {
